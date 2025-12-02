@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>home page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class ="home">               
+    <div class ="page-wrapper">
+        <nav class="navbar">
+
+    <div id="logo">
+        <a href="home.html" id ="logoLink"> <h1 id ="m">M</h1> <h1 id = "d">D</h1> </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="home.html" id ="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+         <li><a href="Michaels-Amazing-website/.qodo/other-stuff/resume.pdf" target="_blank">Resume</a></li>
+         <li> <a href ="running.html">Running</a> </li>
+        <li><a href="contact.html">Contact</a></li>
+       
+
+    </ul>
+
+</nav>
+<div class="me">
+<p> Hello there, Im Michael D'Andrea and this is my Website </p>
+</div>
+<div class = "buttons">
+    <div class ="person">
+      <h2> The man behind the website</h2>
+       <a href="about.html"><button id ="about"> Who am i? </button></a>
+    </div>
+
+    <div class ="Running">
+        <h2> can you beat me in a race?</h2>
+        <a href ="running.html"> <button id ="run"> Let's find out</button></a>
+    </div>
+    <div class="resume">
+    <h2>Want to see my experience?</h2>
+    <a href="Michaels-Amazing-website/.qodo/other-stuff/resume.pdf" target="_blank">
+        <button id="resume-btn">View Resume</button>
+    </a>
+</div>
+
+<div class="contact-me">
+    <h2>Need to reach me?</h2>
+    <a href="contact.html">
+        <button id="contact-btn">Contact Me</button>
+    </a>
+</div>
+
+    </div>
+    
+<div class ="other">
+<div class ="inside">
+     <h2> What went into this website:</h2> <hr>
+    <p> this entire website was made using Html,Javascript, and a whole lot of CSS</p>
+</div>
+<div class ="extra">
+     <h2> fun facts about me:</h2> <hr>
+     <ul>
+        <li> My favorite color is red</li>
+        <li>Ive never broken a bone</li>
+        <li> My favorite food is steak</li>
+        <li> I absolutely hate oatmeal</li>
+        <li> Basketball is my favorite sport</li>
+     </ul>
+</div>
+
+</div>
+
+<button id ="compliment"> Feeling down click here for a compliment</button>
+
+<div id="compliment-box" style="display:none;  padding:15px; margin-top:50px;  max-width: 60%; height: 30%;  margin-left:auto; margin-right:auto;">
+    <p id="compliment-text" style="color:white; font-family:'Press Start 2P'; font-size:30px;  text-align: center;"></p>
+
+<script>
+const compliments = [
+    "You're smarter than you think.",
+    "Your kindness is contagious.",
+    "You light up any room.",
+    "Your potential is limitless.",
+    "You're becoming the best version of yourself.",
+    "People appreciate you more than you know.",
+    "You have a great sense of humor.",
+    "Your smile makes the world better.",
+    "You are a natural problem solver.",
+    "Your energy is refreshing.",
+    "You’re truly one of a kind.",
+    "Your creativity is inspiring.",
+    "You make difficult things look easy.",
+    "You have a great heart.",
+    "You bring out the best in others.",
+    "You always find a way.",
+    "Your growth is amazing.",
+    "You’re stronger than your challenges.",
+    "Your ideas matter.",
+    "The world is better with you in it.",
+    "You are brave even when you don’t feel it.",
+    "Your presence makes people feel safe.",
+    "You learn fast and adapt even faster.",
+    "Your hard work shows.",
+    "You’re becoming unstoppable.",
+    "You make life brighter.",
+    "You have a calming presence.",
+    "Your future is full of good things.",
+    "You’re meant for greatness.",
+    "People admire your dedication.",
+    "You think in ways others can’t.",
+    "Your perspective is valuable.",
+    "You have a rare kind of confidence.",
+    "Your determination is powerful.",
+    "You inspire people without knowing.",
+    "You’re incredibly resilient.",
+    "You make challenges look small.",
+    "You’re deserving of every good thing.",
+    "Your potential scares your fears.",
+    "You’re irreplaceable.",
+    "Your curiosity is a superpower.",
+    "You’re becoming legendary.",
+    "Your presence is a blessing.",
+    "You improve everything you touch.",
+    "You’re doing better than you think.",
+    "You are capable of anything.",
+    "You’re built different.",
+    "You are unstoppable when focused.",
+    "You’re someone people are proud of."
+];
+
+let resetTimer = null;
+
+document.getElementById("compliment").addEventListener("click", () => {
+    const box = document.getElementById("compliment-box");
+    const text = document.getElementById("compliment-text");
+
+    const randomMessage = compliments[Math.floor(Math.random() * compliments.length)];
+    text.textContent = randomMessage;
+
+    box.style.display = "block";
+
+    // Reset timer if clicking repeatedly
+    if (resetTimer) clearTimeout(resetTimer);
+
+    resetTimer = setTimeout(() => {
+        box.style.display = "none";
+        text.textContent = "";
+    }, 15000);
+});
+</script>
+</div>
+ 
+    </div>
+
+
+<footer class ="footer">
+    <pre style="color:white">author: Michael D'Andrea                phone number:636-686-8622                    ©2025 Michaels Amazing Website                       mdandrea2006@gmail.com   </pre>
+</footer>
+</body>
+</html>

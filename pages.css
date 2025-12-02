@@ -1,0 +1,506 @@
+
+.navbar { 
+    display: flex; /* enables flexbox: items align horizontally by default */
+    align-items: center; /* vertically centers everything inside the navbar */
+    justify-content: space-between; /* pushes first child left, last child right */
+    background: #242424; /* dark background color for navbar */
+    height: 10vh; /* navbar takes up 10% of the viewport height */
+    font-family: "press Start 2p"; /* sets the font used inside the navbar */
+    margin:0; /* removes default margin around navbar */
+    padding:0; /* removes default padding around navbar */
+}
+
+#logo { 
+    display: flex; /* allows easy alignment of logo text and icons */
+    margin-left: 7px; /* small space from left edge of navbar */
+    margin-right: 20px; /* spacing between logo and nav links */
+}
+
+#logoLink { 
+    display: flex; /* keeps logo elements aligned on same line */
+    text-decoration: none; /* removes underline from clickable logo */
+}
+
+#logoLink h1 { 
+    margin: 0.2px; /* extremely tiny margin to fix default large h1 spacing */
+}
+
+.nav-links { 
+    display: flex; /* displays links in a horizontal row */
+    flex: 1; /* allows nav-links section to stretch across navbar */
+    justify-content: space-between; /* evenly distributes each link */
+    list-style: none; /* removes bullets (if it’s a <ul>) */
+    margin-right: 25px; /* spacing between links and right side of navbar */
+}
+
+.nav-links a { 
+    color: white; /* makes text white for visibility */
+    text-decoration: none; /* removes underline from nav links */
+    font-size: 30px; /* large text size for menu links */
+    height: 100%; /* matches link height to navbar height */
+    display: flex; /* allows vertical centering */
+    align-items: center; /* centers link text vertically */
+    border-radius: 4px; /* slightly rounded corners */
+}
+
+.nav-links a:hover { 
+    background: #9a9a9a; /* gray background highlight when hovered */
+}
+
+/* ========================= ACTIVE LINK ========================= */
+
+#active { 
+    background: #00fe3f; /* gives “active page” nav link a bright green background */
+}
+
+/* ========================= COLORED LETTERS ========================= */
+
+#m { 
+    color: red; /* red letter */
+    font-size: 40px; /* large size for emphasis */
+}
+
+#d { 
+    color: blue; /* blue letter */
+    font-size: 40px; /* large size for emphasis */
+}
+
+.page-wrapper {
+    min-height: 100vh;   /* ensures page is at least full screen height */
+    margin:0;  /* removes default margin */
+    padding:0; /* removes default padding */
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.footer {
+    margin-top: auto;    /* pushes footer to the bottom of the page */
+    display: flex;          /* horizontal layout for the text */
+    align-items: center;    /* vertically centers footer text */
+    justify-content: center;/* horizontally centers footer text */
+    width: 100%;            /* full width footer */
+    height: 2vh;            /* small height like you wanted */
+    font-family: "open sans", sans-serif;
+    color: rgb(15, 15, 15);
+}
+
+
+/* ========================= CONTACT PAGE ========================= */
+
+#contact-head {
+    text-align: center; /* centers the contact page heading */
+    margin-top: 10px; /* adds spacing above the heading */
+    font-size: 50px; /* large heading size */
+    font-family: "press Start 2p"; /* keeps pixel-style font */
+}
+
+.icons {
+    display: flex; /* makes icon list horizontal */
+    justify-content: center; /* centers icons in the page */
+    gap: 270px; /* adds equal spacing between icons */
+    margin-top: 80px; /* pushes icons downward */
+}
+
+.icons a {
+    text-decoration: none; /* removes underline from icon links */
+}
+
+.contact {
+    min-height: 160vh; /* page extends vertically → allows scrolling */
+    display: flex; /* enables flexbox layout */
+    flex-direction: column; /* stacks content vertically */
+    margin:0;
+    padding: 0;
+    animation: fadeIn 1s ease-in forwards;
+    
+background:
+  /* tiny grid */
+  repeating-linear-gradient(0deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 6px),
+  repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 6px),
+
+  /* blue vertical fade */
+  linear-gradient(
+      to bottom,
+      #2e466a,
+      #1c293d,
+      #0f1623
+  );
+
+
+
+
+}
+
+/* ========================= CONTACT FORM BOX ========================= */
+
+.form {
+    margin: 150px auto 70px auto; /* top margin pushes form down, auto centers horizontally */
+    background: #151517; /* dark greenish background for form container */
+    padding: 1px 40px 40px 30px; /* top padding small, sides/bottom more for spacing */
+    border-radius: 12px; /* smooth rounded corners */
+    max-width: 500px; /* limits form width to keep it centered and clean */
+    font-family: "press Start 2p"; /* keeps the retro font style */
+    border: 2px solid red;
+     box-shadow: 0 0 20px rgba(255, 0, 80, 0.75),
+                0 0 40px rgba(255, 0, 120, 0.45),
+                inset 0 0 10px rgba(255, 0, 80, 0.3);
+}
+
+.form h1 {
+    text-align: center; /* centers the form title */
+    font-size: 50px; /* large title font */
+    margin-bottom: 5px; /* small spacing below the title */
+}
+
+.form label {
+    display: block; /* puts label on its own line */
+    margin-bottom: 6px; /* spacing between label and input */
+    font-weight: bold; /* bold label text for readability */
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%; /* inputs stretch full width of container */
+    padding: 10px; /* inside spacing for clean look */
+    margin-bottom: 15px; /* spacing between fields */
+    border: 3px solid #060606; /* thick dark border for retro look */
+    border-radius: 8px; /* rounded input corners */
+    box-sizing: border-box; /* ensures padding doesn’t increase width */
+}
+
+/* ========================= FORM BUTTON STYLES ========================= */
+
+.form-btn {
+    width: 100%; /* full-width buttons */
+    padding: 12px; /* inside spacing for button text */
+    border: none; /* removes default borders */
+    border-radius: 8px; /* rounded buttons */
+    font-size: 16px; /* readable text size */
+    font-weight: bold; /* bold button text */
+    margin-top: 5px; /* spacing above each button */
+    cursor: pointer; /* makes cursor change to pointer when hovering */
+}
+
+.reset-btn {
+    background: #0015ff; /* blue background */
+    color: #000000; /* black text inside button */
+    font-family: "press Start 2p"; /* matches rest of form style */
+}
+
+.submit-btn {
+    background: #ff3c00; /* red background */
+    color: #000000; /* black text */
+    font-family: "press Start 2p"; /* consistent font */
+}
+
+.running-page {
+ background:
+  radial-gradient(circle at 80% 0%, rgba(255, 80, 255, 0.547), transparent 95%),
+  linear-gradient(180deg, #2a0040, hsl(275, 65%, 20%));
+background-size: cover;
+background-attachment: fixed;
+
+
+    min-height: 220vh; /* allows vertical scrolling */
+    display: flex; /* enables flexbox layout */
+    flex-direction: column; /* stacks content vertically */
+    margin:0; /* removes default margin */
+    padding:0; /* removes default padding */
+
+}
+#pace {
+    width: 150px; /* sets a fixed width for the image */
+    height:auto; /* maintains aspect ratio */
+}
+.about {
+    margin:0; /* removes default margin */
+    padding:0; /* removes default padding */
+    /* Base gradient for deep space feel */
+  background: repeating-linear-gradient(45deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(41, 27, 158),rgb(249, 77, 212));
+    /* Add layered radial gradients for opal-like swirls */
+
+}
+
+/* Animation for slow swirling effect */
+@keyframes galaxyShift {
+    0% { background-position: 0% 0%, 100% 50%, 50% 100%; }
+    50% { background-position: 100% 100%, 0% 50%, 50% 0%; }
+    100% { background-position: 0% 0%, 100% 50%, 50% 100%; }
+}
+.me {
+    font-family: "press Start 2p"; /* retro font */
+    font-size: 20px; /* large text size */
+    color: rgb(0, 0, 0); /* white text for contrast */
+    text-align: center; /* centers the text */
+    margin-top: 50px; /* spacing above the text */
+}
+.me p {
+    text-shadow: 0px 0px 8px #fff, 0 0 15px cyan;
+    animation: titleFlicker 3s infinite alternate;
+}
+@keyframes titleFlicker {
+    0% { opacity: 1; text-shadow: 0 0 8px #fff, 0 0 15px cyan; }
+    30% { opacity: 0.9; text-shadow: 0 0 6px #fff; }
+    32% { opacity: 1; }
+    40% { opacity: 0.85; }
+    41% { opacity: 1; }
+    70% { opacity: 0.95; text-shadow: 0 0 10px cyan, 0 0 25px blue; }
+    100% { opacity: 1; }
+}
+.buttons{
+    display: flex; /* makes buttons align horizontally */
+    gap: 80px; /* spacing between buttons */
+    margin-top: 50px; /* spacing above the buttons */
+    max-height: 40vh; /* limits button container height */
+
+
+}
+.buttons h2 {
+    font-family: "Press Start 2P";
+    text-shadow: 2px 2px 0 #000, 0 0 10px #8f00ff;
+    color: #ffffff;
+    letter-spacing: 2px;
+    animation: h2GlowPulse 4s infinite ease-in-out;
+}
+
+@keyframes h2GlowPulse {
+    0% { text-shadow: 2px 2px 0 #000, 0 0 8px #8f00ff; }
+    50% { text-shadow: 2px 2px 0 #000, 0 0 18px #c400ff; }
+    100% { text-shadow: 2px 2px 0 #000, 0 0 8px #8f00ff; }
+}
+.person{
+    text-align: center; /* centers the text inside the button container */
+    max-width: 20%; /* limits the width of the button container */
+     display: flex;
+    flex-direction: column;  /* stack title and button vertically */
+    justify-content: space-between; /* pushes button to bottom */
+    height: 330px; 
+    
+}
+#about {  
+    padding: 20px;
+    background-color: rgb(234, 19, 19);
+    text-align: center;
+    margin-right: 30px;
+    font-size: 20px;
+    font-family: "Press Start 2P";
+    border-radius: 14px;
+      height: 80px;
+      margin-bottom: 120px;
+       border: 4px solid #010101;
+    transition: transform 0.4s ease;
+      box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+  
+#about:hover{
+    transform: scale(1.1) translateY(-10px);
+    opacity: 70%;
+     cursor:pointer;
+}
+.Running{
+ text-align: center; /* centers the text inside the button container */
+    max-width: 20%; /* limits the width of the button container */
+     display: flex;
+    flex-direction: column;  /* stack title and button vertically */
+    justify-content: space-between; /* pushes button to bottom */
+    height: 330px; 
+}
+
+#run{
+      background-color:rgb(112, 6, 251);
+    padding:20px;
+    transition: transform 0.4s ease;
+    text-align: center;
+    margin-right: 30px;
+      height: 80px;
+    font-size: 20px;
+    font-family: "press Start 2p";
+     margin-bottom: 120px;
+      border: 4px solid #010101;
+     border-radius: 14px;
+       box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+#run:hover{
+    transform: scale(1.1) translateY(-10px);
+    opacity: 70%;
+     cursor:pointer;
+}
+
+/* ======== HOME PAGE EXTRA BUTTONS (Resume + Contact) ======== */
+
+.resume, .contact-me {
+    text-align: center;
+    max-width: 20%;
+     display: flex;
+    flex-direction: column;  /* stack title and button vertically */
+    justify-content: space-between; /* pushes button to bottom */
+    height: 330px; 
+}
+
+/* Resume button */
+#resume-btn {
+    background-color: rgb(0, 162, 255);
+    padding: 20px;
+    transition: transform 0.4s ease;
+    text-align: center;
+    margin-right: 30px;
+    font-size: 20px;
+      height: 80px;
+    font-family: "press Start 2p";
+    margin-bottom: 120px;
+     border: 4px solid #010101;
+    border-radius: 14px;
+      box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+
+#resume-btn:hover {
+    transform: scale(1.1) translateY(-10px);
+    opacity: 70%;
+    cursor: pointer;
+
+}
+
+/* Contact button */
+#contact-btn {
+    background-color: rgb(7, 85, 42);
+    padding: 20px;
+    height: 80px;
+    transition: transform 0.4s ease;
+    text-align: center;
+    margin-right: 30px;
+    font-size: 20px;
+    font-family: "press Start 2p";
+     margin-bottom: 120px;
+      border: 4px solid #010101;
+     border-radius: 14px;
+       box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+
+#contact-btn:hover {
+    transform: scale(1.1) translateY(-10px);
+    opacity: 70%;
+    cursor: pointer;
+}
+.home{
+background: repeating-linear-gradient(135deg, rgb(0,0,0) 0px, rgb(0,0,0) 10px,transparent 10px, transparent 11px),repeating-linear-gradient(22.5deg, rgb(0,0,0) 0px, rgb(0,0,0) 10px,transparent 10px, transparent 11px),linear-gradient(90deg, hsl(194,74%,56%),hsl(266,74%,56%),hsl(338,74%,56%),hsl(50,74%,56%),hsl(122,74%,56%));
+  min-height: 160vh;
+    display: flex; /* enables flexbox layout */
+    flex-direction: column; /* stacks content vertically */
+    margin:0;
+    padding:0;
+}
+
+.other {
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    margin-top: -20px;
+}
+
+
+/* header */
+.inside h2,
+.extra h2 {
+    font-family:"Press Start 2P";
+    text-align:center;
+    margin:0 0 6px 0;      /* small space below title */
+    font-size:14px;        /* consistent title size */
+    line-height:1.2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.inside,.extra{
+    height:200px;
+    width:200px;
+    background-color: #0015ff;
+    padding:15px;
+    border-radius: 30px;
+    transition: transform 0.4s ease;
+      box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+
+.extra ul {
+    flex:1;                /* fills the rest */
+    font-size:11px;        /* match paragraph size */      /* tighter to reduce whitespace */
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; /* text begins at top */
+    font-family:"Press Start 2P";
+    padding-left:18px;
+    line-height: 1.2;
+}
+
+.inside p{
+flex: 1;
+    font-family: "Press Start 2P";
+    font-size: 13px;
+    
+    line-height: 1.6;
+    
+    white-space: normal;     /* Allow wrapping onto new lines */
+    word-break: keep-all;    /* NEVER break words, but allow wrapping at spaces */
+    overflow-wrap: normal;
+}
+
+.extra ul {
+    padding-left:18px;
+}
+
+.extra ul li {
+    margin-bottom:4px;
+}
+.inside:hover,.extra:hover{
+    transform: scale(1.1) translateY(-10px);
+    opacity: 90%;
+    cursor:pointer;
+}
+
+#compliment {
+    display: block;
+  margin: 0 auto;
+  margin-top:80px;
+  padding:15px;
+  font-size: 17px;
+ font-family:"Press Start 2P";
+ border-radius: 20px;
+ height:120px;
+ width:300px;
+ background-color: #f5e6ca;
+ cursor:pointer;
+ transition: transform 0.5s ease;
+   box-shadow:
+        0 0 16px  rgba(120, 60, 255, 0.55),
+        0 0 22px rgba(60, 150, 255, 0.45),
+        0 0 30px rgba(60, 150, 255, 0.35);
+}
+#compliment:hover{
+    transform: scale(1.13) rotate(360deg)
+}

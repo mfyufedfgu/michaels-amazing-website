@@ -1,0 +1,157 @@
+* { /* applies to all elements on the page */
+    margin: 0; /* removes all default outer spacing */
+    padding: 0; /* removes all default inner spacing */
+    box-sizing: border-box; /* includes padding/border inside element width/height */
+}
+
+body, html { /* base document elements */
+    width: 100%; /* ensures both elements take full page width */
+    height: 100%; /* ensures both elements stretch full page height */
+}
+
+/* Container for all lines */
+.puzzle-container { /* main container holding the puzzle rows */
+    display: flex; /* enables flexbox layout */
+    flex-direction: column; /* stacks child rows vertically */
+    height: 100%; /* container fills entire page height */
+    position: relative; /* allows absolutely positioned children (the button) */
+}
+
+/* Each line is a flex row */
+.puzzle-line { /* container for a single row of letters */
+    display: flex; /* lays out each letter horizontally */
+    flex: 1; /* makes every row take equal vertical height */
+}
+
+.puzzle-line h1 { /* styles for each individual puzzle letter */
+    background-color: rgb(215, 215, 215); /* default background before ID overrides it */
+    color: rgb(0, 0, 0); /* sets text color to black */
+    margin: 0; /* removes default h1 margins */
+    flex: 1; /* ensures each letter in the row has equal width */
+    display: flex; /* enables centering of text */
+    justify-content: center; /* horizontally centers letter */
+    align-items: center; /* vertically centers letter */
+    border: 0.5px solid rgb(0, 0, 0); /* thin border around each tile */
+    font-size: 15vmin; /* responsive letter size: 15% of shorter viewport side */
+}
+
+.start-button { /* large clickable button centered on screen */
+    position: absolute; /* positions button relative to puzzle-container */
+    top: 50%; /* moves button to vertical center */
+    left: 50%; /* moves button to horizontal center */
+    transform: translate(-50%, -50%); /* perfect centering by offsetting own size */
+  
+    padding: 30px; /* spacing inside button */
+    font-size: 1.5rem; /* medium/large button text */
+    font-weight: bold; /* bold text */
+    cursor: pointer; /* makes cursor a pointer on hover */
+    background-color: #ff5722; /* orange button background */
+    color: rgb(0, 0, 0); /* black text color */
+    border: 1px solid rgb(0, 0, 0); /* black border */
+    border-radius: 50px; /* rounded pill-shaped button */
+}
+
+.start-button:hover { /* button hover animation */
+    background-color: rgb(253, 112, 112); /* lighter red/orange when hovered */
+}
+
+.start-button a {  /* link inside the button */
+    text-decoration: none; /* removes underline from link text */
+    color: rgb(0, 0, 0); /* ensures the link text stays black */
+}
+
+#num1,#num2,#num3,#num4,#num5,#num6,
+#num7,#num8,#num9,#num10,#num11,#num12,
+#num13,#num14,#num15,#num16,#num17,#num18,
+#num19,#num20,#num21,#num22,#num23,#num24 {
+  position: relative;
+  border: 2px solid rgba(0,0,0,0.18);
+  box-shadow:
+      0 6px 14px rgba(0,0,0,0.28),
+      inset 0 2px 4px rgba(255,255,255,0.22),
+      inset 0 -2px 4px rgba(0,0,0,0.15);
+  background-image: linear-gradient(to bottom right,
+        rgba(255,255,255,0.15),
+        rgba(0,0,0,0.10));
+  background-blend-mode: overlay;
+}
+
+
+
+/* === COLORS — unchanged === */
+#num1{ background-color: #ff9999; }
+#num2{ background-color: #ffcc99; }
+#num3{ background-color: #ffff99; }
+#num4{ background-color: #ccff99; }
+#num5{ background-color: #99ffcc; }
+#num6{ background-color: #99ccff; }
+#num7{ background-color: #cc99ff; }
+#num8{ background-color: #ff99cc; }
+#num9{ background-color: #ff6666; }
+#num10{ background-color: #ffb366; }
+#num11{ background-color: #ffff66; }
+#num12{ background-color: #D2691E; }
+#num13{ background-color: #66ffcc; }
+#num14{ background-color: #66ccff; }
+#num15{ background-color: #EAA221; }
+#num16{ background-color: #ff66b3; }
+#num17{ background-color: #ff4d4d; }
+#num18{ background-color: #ff944d; }
+#num19{ background-color: #ffff4d; }
+#num20{ background-color: #94ff4d; }
+#num21{ background-color: #A8C3BC; }
+#num22{ background-color: #E5E4E2; }
+#num23{ background-color: #786D5F; }
+#num24{ background-color:#FFBF00; }
+
+#num22 { color:#222; }
+#num12,#num23 { color:#f8f8f8; text-shadow:0 1px 1px rgba(0,0,0,0.35); }
+
+
+/* --- ANIMATION SETTINGS FOR LETTER TILE FADE-IN --- */
+.puzzle-line h1 { /* animation applied to all letter tiles */
+    opacity: 0;  /* letters start invisible */
+    animation: fadeIn 1.2s ease forwards; /* fade them in smoothly */
+}
+
+/* individual animation delays for randomized sequence */
+#num1  { animation-delay: 3.2s; } /* waits 3.2 seconds before fading in */
+#num2  { animation-delay: 0.8s; } /* waits 0.8 seconds */
+#num3  { animation-delay: 2.6s; }
+#num4  { animation-delay: 4.4s; }
+#num5  { animation-delay: 1.4s; }
+
+#num6  { animation-delay: 4.0s; }
+#num7  { animation-delay: 2.2s; }
+#num8  { animation-delay: 1.0s; }
+#num9  { animation-delay: 3.8s; }
+#num10 { animation-delay: 0.4s; }
+#num11 { animation-delay: 4.8s; }
+#num12 { animation-delay: 2.8s; }
+
+#num13 { animation-delay: 1.8s; }
+#num14 { animation-delay: 0.2s; }
+#num15 { animation-delay: 3.6s; }
+#num16 { animation-delay: 2.0s; }
+
+#num17 { animation-delay: 4.6s; }
+#num18 { animation-delay: 0.6s; }
+#num19 { animation-delay: 3.0s; }
+#num20 { animation-delay: 1.2s; }
+#num21 { animation-delay: 4.2s; }
+#num22 { animation-delay: 3.4s; }
+#num23 { animation-delay: 1.6s; }
+#num24 { animation-delay: 2.4s; }
+
+/* --- FADE-IN KEYFRAMES USED BY LETTERS AND BUTTON --- */
+@keyframes fadeIn { /* defines how the fade animation behaves */
+    from { opacity: 0; } /* start invisible */
+    to   { opacity: 1; } /* end fully visible */
+}
+
+.start-button { /* extra animation for the button */
+    opacity: 0;  /* start invisible */
+    animation: fadeIn 0.6s ease forwards; /* fade in smoothly */
+    animation-delay: 6.4s; /* only appear after all letters finish animating */
+}
+
