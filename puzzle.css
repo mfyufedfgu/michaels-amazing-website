@@ -13,7 +13,7 @@ body, html { /* base document elements */
 .puzzle-container { /* main container holding the puzzle rows */
     display: flex; /* enables flexbox layout */
     flex-direction: column; /* stacks child rows vertically */
-    height: 100%; /* container fills entire page height */
+    height:100%; /* container fills entire page height */
     position: relative; /* allows absolutely positioned children (the button) */
 }
 
